@@ -1,0 +1,16 @@
+#--------[Ignore Secret Environment Files]--------#
+.env
+env
+
+#--------[Ignore Python Cache Files]--------#
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+#--------[Ignore Generated Audio Files]--------#
+*.mp3
+*.wav
+
+#--------[Ignore Model Cache Files]--------#
+.cache/

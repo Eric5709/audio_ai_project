@@ -1,0 +1,10 @@
+#--------[Define MacGyver Agent Default Settings]--------#
+# audio_path: Source/Audio/english_cook.m4a
+audio_path: Source/Audio/korean_cook.m4a
+image_path: Source/Image/fridge.png
+# language: en
+language: null
+model_size: large-v3
+device: cuda
+compute_type: float16
+gemini_model: gemini-2.5-flash
