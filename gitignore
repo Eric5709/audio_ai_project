@@ -1,0 +1,15 @@
+# 비밀 키 (절대 커밋 금지)
+.env
+
+# 파이썬
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# 생성된 음성/오디오 파일
+*.mp3
+*.wav
+
+# 모델 캐시 (faster-whisper 가 받는 가중치)
+.cache/
