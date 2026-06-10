@@ -7,4 +7,8 @@ language: null
 model_size: large-v3
 device: cuda
 compute_type: float16
-gemini_model: gemini-2.5-flash
+gemini_model: gemini-3.5-flash
+tts_enabled: true
+tts_output_path: response.mp3
+tts_voice: ko-KR-SunHiNeural
+tts_rate: +0%
