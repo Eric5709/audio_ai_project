@@ -1,14 +1,23 @@
 #--------[Define MacGyver Agent Default Settings]--------#
-# audio_path: Source/Audio/english_cook.m4a
-audio_path: Source/Audio/korean_cook.m4a
-image_path: Source/Image/fridge.png
+audio_path: Source/Audio/english_cook.m4a
+# audio_path: Source/Audio/korean_cook.m4a
+# image_path: Source/Image/fridge.png
+image_path: Source/Image/alcohol.png
 # language: en
 language: null
-model_size: large-v3
+# model_size: large-v3
+# model_size: turbo
+# model_size: medium
+# model_size: small
+# model_size: base
+model_size: tiny
+asr_refine_enabled: true
 device: cuda
 compute_type: float16
 gemini_model: gemini-3.5-flash
 tts_enabled: true
+tts_refine_enabled: true
 tts_output_path: response.mp3
-tts_voice: ko-KR-SunHiNeural
+tts_voice_ko: ko-KR-SunHiNeural
+tts_voice_en: en-US-JennyNeural
 tts_rate: +0%

@@ -7,7 +7,8 @@
    -> OpenAI Whisper ASR로 음성을 텍스트로 변환
    -> Gemini가 이미지와 ASR 텍스트를 함께 해석
    -> 터미널에 보기 좋은 추천과 짧은 방법을 출력
-   -> Edge TTS로 같은 추천 내용을 음성으로 저장
+   -> 추천 결과를 TTS용 자연스러운 대본으로 한 번 더 정리
+   -> Edge TTS로 대본을 음성으로 저장
 ```
 
 ## 설치
@@ -45,10 +46,13 @@ language: null
 model_size: large-v3
 device: cuda
 compute_type: float16
-gemini_model: gemini-2.5-flash
+gemini_model: gemini-3.5-flash
+asr_refine_enabled: true
 tts_enabled: true
+tts_refine_enabled: true
 tts_output_path: response.mp3
-tts_voice: ko-KR-SunHiNeural
+tts_voice_ko: ko-KR-SunHiNeural
+tts_voice_en: en-US-JennyNeural
 tts_rate: +0%
 ```
 
@@ -91,7 +95,9 @@ TTS 출력 파일이나 음성을 바꿀 수도 있습니다.
 python macgyver_agent.py --tts-output response.mp3 --tts-voice ko-KR-SunHiNeural
 ```
 
-실행 결과는 터미널에 바로 읽기 좋은 텍스트로 출력됩니다. 별표나 JSON 없이 추천 이름, 재료/물건, 짧은 방법 중심으로 나오고, 같은 내용을 TTS 음성 파일로 저장합니다.
+입력 음성이 한국어면 한국어 답변과 한국어 TTS voice를 사용하고, 영어면 영어 답변과 영어 TTS voice를 사용합니다. `--tts-voice`를 직접 지정하면 자동 선택보다 우선합니다.
+
+실행 결과는 터미널에 바로 읽기 좋은 텍스트로 출력됩니다. 별표나 JSON 없이 추천 이름, 재료/물건, 짧은 방법 중심으로 나오고, TTS는 그 결과를 한 번 더 자연스러운 말투로 정리한 대본을 읽습니다.
 
 ## 프로젝트 구조
 
